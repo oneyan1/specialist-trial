@@ -1,0 +1,118 @@
+.header {
+  margin-top: 65px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .title {
+    display: none;
+    font-weight: 600;
+    @media (min-width: 992px) {
+      display: block;
+      font-size: 20px;
+    }
+    @media (min-width: 1200px) {
+      display: block;
+      font-size: 25px;
+    }
+    @media (min-width: 1440px) {
+      display: block;
+      font-size: 30px;
+    }
+  }
+  .button-block {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 992px) {
+      flex-direction: row;
+    }
+    &__button {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 14px;
+      font-weight: 6400;
+      border: 1px solid #e2e4ec;
+      background-color: #f3f5fc;
+      width: 100px;
+      color: #a2a8c1;
+      @media (min-width: 992px) {
+        width: 150px;
+      }
+      @media (min-width: 1440px) {
+        width: 200px;
+      }
+      &_left {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      &_right {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      &_active {
+        border: 1px solid #3540ff;
+        background-color: #3540ff;
+        color: #fff;
+        box-shadow: 0px 10px 16px 0px #cbd4fab2;
+      }
+      &_regular {
+        transition: 0.5s all;
+        &:hover {
+          color: #3540ff;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+  .search {
+    display: flex;
+    justify-content: flex-end;
+    width: 200px;
+
+    @media (min-width: 1440px) {
+      width: 300px;
+    }
+    &:hover,
+    &:focus-within {
+      .search-input {
+        width: 200px;
+        background-color: #fff;
+        box-shadow: 0px 3px 16px 0px #2211660d;
+
+        @media (min-width: 1440px) {
+          width: 300px;
+        }
+      }
+    }
+    &-label {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        background: url("../../../assets/icons/ic-search.svg") center / contain
+          no-repeat;
+      }
+    }
+    &-input {
+      padding: 10px 30px 10px 35px;
+      border: none;
+      background-color: transparent;
+      font-size: 16px;
+      width: 150px;
+      transition: width 0.4s ease-in-out;
+      outline: none;
+      &::placeholder {
+        color: #999;
+      }
+      &__active {
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0px 3px 16px 0px #2211660d;
+      }
+    }
+  }
+}
